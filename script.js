@@ -5,12 +5,8 @@ let button = document.getElementById("btn");
 button.addEventListener('click',(e)=>{
     e.preventDefault();
 
-    let colors = document.querySelectorAll("#colorSelect option")
-  
-    for(let i=0;i<colors.length;i++){
-
-      if(colorSelect.value===colors[i].value){
-        colorSelect.removeChild(colors[i]);
-      }
+    let currentSelected = colorSelect.options[colorSelect.selectedIndex]
+    if(currentSelected!=null){
+      colorSelect.removeChild(currentSelected)
     }
 })
